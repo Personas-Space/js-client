@@ -1,16 +1,16 @@
 const { expect } = require('chai')
-const URL = require('../src/get/url')
+const { get } = require('../src/index')
 
 describe('Get module', function () {
-  describe('URL function', function () {
+  describe('get.urls function', function () {
     it('should fail when address is present but not a string', function () {
-      expect(function () { URL({}) }).to.throw('Address must be of type string')
-      expect(function () { URL(1) }).to.throw('Address must be of type string')
-      expect(function () { URL([]) }).to.throw('Address must be of type string')
+      expect(function () { get.urls({}) }).to.throw('Address must be of type string')
+      expect(function () { get.urls(1) }).to.throw('Address must be of type string')
+      expect(function () { get.urls([]) }).to.throw('Address must be of type string')
     })
 
     it('returns valid values when address is present', function () {
-      const { avatar, profile, explorer } = URL('0x')
+      const { avatar, profile, explorer } = get.urls('0x')
 
       expect(avatar.small).to.equal('https://img.prs.onl/avatar/small/0x.png')
       expect(avatar.medium).to.equal('https://img.prs.onl/avatar/medium/0x.png')
@@ -20,7 +20,7 @@ describe('Get module', function () {
     })
 
     it('returns valid defaults when address is missing', function () {
-      const { avatar, profile, explorer } = URL()
+      const { avatar, profile, explorer } = get.urls()
 
       expect(avatar.small).to.equal('https://img.prs.onl/avatar/placeholders/small.png')
       expect(avatar.medium).to.equal('https://img.prs.onl/avatar/placeholders/medium.png')

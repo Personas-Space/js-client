@@ -1,5 +1,5 @@
 
-function url (address) {
+function urls (address) {
   if (address && typeof address !== 'string') {
     throw new Error('Address must be of type string')
   }
@@ -18,4 +18,4 @@ function url (address) {
   }
 }
 
-module.exports = url
+module.exports = urls

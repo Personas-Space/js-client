@@ -1,4 +1,4 @@
 
-const url = require('./get/url')
+const urls = require('./get/urls')
 
-module.exports = { get: url }
+module.exports = { get: { urls } }

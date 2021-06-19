@@ -1,10 +1,10 @@
 {
   "name": "@personas/client",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Personas client library",
-  "main": "./dist/lib/main.js",
+  "main": "./lib/umd.min.js",
   "scripts": {
-    "build": "npm run lint && npx webpack",
+    "build": "npm run lint && yarn test && npx webpack",
     "lint": "eslint ./src/**/*.js ./test/**/*.js ./.eslintrc.js ./webpack.config.js --fix",
     "pub": "npm run build && npm publish --access public",
     "test": "mocha"

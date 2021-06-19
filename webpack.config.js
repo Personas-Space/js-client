@@ -1,7 +1,7 @@
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'lib/main.js',
+    filename: 'lib/umd.min.js',
     library: {
       type: 'umd',
       name: 'personas'
